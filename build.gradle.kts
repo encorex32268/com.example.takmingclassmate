@@ -3,6 +3,24 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 
+ktor{
+    docker{
+        jreVersion.set(JavaVersion.VERSION_17)
+        localImageName.set("takmingclassmate-image")
+        imageTag.set("0.0.1-preview")
+        portMappings.set(listOf(
+            io.ktor.plugin.features.DockerPortMapping(
+                80,
+                8080,
+                io.ktor.plugin.features.DockerPortMappingProtocol.TCP
+            )
+        ))
+    }
+
+
+}
+
+
 plugins {
     kotlin("jvm") version "1.9.23"
     id("io.ktor.plugin") version "2.3.9"
