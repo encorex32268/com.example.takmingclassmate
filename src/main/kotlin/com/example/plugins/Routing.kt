@@ -1,5 +1,8 @@
 package com.example.plugins
 
+import com.example.allDog
+import com.example.getDog
+import com.example.randomDog
 import io.ktor.resources.*
 import io.ktor.server.application.*
 import io.ktor.server.http.content.*
@@ -12,6 +15,9 @@ import kotlinx.serialization.Serializable
 fun Application.configureRouting() {
     install(Resources)
     routing {
+        getDog()
+        randomDog()
+        allDog()
         get("/") {
             call.respondText("Hello World!")
         }
