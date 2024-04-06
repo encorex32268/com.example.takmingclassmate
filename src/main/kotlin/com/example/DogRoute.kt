@@ -11,7 +11,7 @@ import kotlinx.html.body
 import kotlinx.html.div
 import kotlinx.html.img
 
-const val BASE_URL = "http://127.0.0.1:8080/"
+const val BASE_URL = "https://raw.githubusercontent.com/encorex32268/com.example.takmingclassmate/master/src/main/resources/static/dog/"
 
 val dogPhotos = (1..22).map {
     String.format("%02d",it) + ".jpg"
@@ -27,7 +27,7 @@ fun Route.getDog(){
                 call.respondHtml {
                     body {
                         img(
-                            src = BASE_URL + "static/dog/"+ result
+                            src = BASE_URL + result
                         ) {
                             width = "480"
                             height = "600"
@@ -56,7 +56,7 @@ fun Route.randomDog(){
             call.respondHtml {
                 body {
                     img(
-                        src = BASE_URL + "static/dog/"+ result
+                        src = BASE_URL + result
                     ) {
                         width = "480"
                         height = "600"
@@ -81,7 +81,7 @@ fun Route.allDog(){
                         dogPhotos.forEach {
                             div {
                                 img(
-                                    src = BASE_URL + "static/dog/"+ it
+                                    src = BASE_URL + it
                                 ) {
                                     width = "480"
                                     height = "600"
