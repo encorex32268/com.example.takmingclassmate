@@ -29,8 +29,8 @@ fun Route.getDog(){
                         img(
                             src = BASE_URL + result
                         ) {
-                            width = "480"
-                            height = "600"
+                            width = "50%"
+                            height = "50%"
                         }
                     }
                 }
@@ -58,8 +58,8 @@ fun Route.randomDog(){
                     img(
                         src = BASE_URL + result
                     ) {
-                        width = "480"
-                        height = "600"
+                        width = "50%"
+                        height = "50%"
                     }
                 }
             }
@@ -83,8 +83,8 @@ fun Route.allDog(){
                                 img(
                                     src = BASE_URL + it
                                 ) {
-                                    width = "480"
-                                    height = "600"
+                                    width = "50%"
+                                    height = "50%"
                                 }
                             }
 
